@@ -1,0 +1,17 @@
+import java.util.*;
+public class Rightandle_Triangle{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the numbers :");
+        int i,j,n=4;
+        System.out.println("Right angle triangle:-");
+        
+        for (i=1;i<=n ;i++ ){
+            for(j=1;j<=i;j++){
+                System.out.print("*");
+            }
+            System.out.print("\n");
+        } 
+        sc.close();
+    }
+}
