@@ -1,0 +1,15 @@
+import java.util.*;
+ public class SimpleInterest_Calculator{
+       
+    public static void main(String[] args){
+        Scanner sc=new Scanner (System.in);
+        System.out.println("Enter the Principle :");
+        int Principle=sc.nextInt();
+        System.out.println("Enter the Rate of Interest :");
+        double Rate=sc.nextDouble();
+        System.out.println("Enter the Time period (in Years) :");
+        int Time=sc.nextInt();
+        double SimpleInterest = (Principle*Rate*Time)/100;
+        System.out.println("Simple Interest :" +SimpleInterest);
+    } 
+}
