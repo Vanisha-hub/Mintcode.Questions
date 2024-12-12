@@ -1,0 +1,200 @@
+Question 1:
+public class PrintArray {
+    public static void printArrayElements(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.println("Element at index " + i + ": " + array[i]);
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] array = {10, 20, 30, 40, 50};
+ 
+        printArrayElements(array);
+    }
+}
+
+
+Question 2:
+public class FindLargest {
+    public static int findLargestElement(int[] array) {
+        int largest = array[0]; 
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] > largest) {
+                largest = array[i];
+            }
+        }
+        return largest;
+    }
+
+    public static void main(String[] args) {
+        int[] array = {10, 20, 30, 40, 50};
+        int largest = findLargestElement(array);
+        System.out.println("The largest element in the array is: " + largest);
+    }
+}
+
+
+
+Question 3:
+public class SumOfArray {
+    public static int calculateSum(int[] array) {
+        int sum = 0;
+        for (int element : array) {
+            sum += element; // Add each element to the sum
+        }
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        int[] array = {10, 20, 30, 40, 50};
+        int sum = calculateSum(array);
+
+        System.out.println("The sum of the elements in the array is: " + sum);
+    }
+}
+
+
+
+Question 4:
+public class ReverseArray {
+    public static void printArrayInReverse(int[] array) {
+        System.out.print("Array in reverse order: ");
+        for (int i = array.length - 1; i >= 0; i--) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        int[] array = {10, 20, 30, 40, 50};
+
+        printArrayInReverse(array);
+    }
+}
+
+
+
+Question 5:
+public class CountEvenOdd {
+    public static void countEvenAndOdd(int[] array) {
+        int evenCount = 0;
+        int oddCount = 0;
+
+        for (int element : array) {
+            if (element % 2 == 0) {
+                evenCount++;
+            } else {
+                oddCount++;
+            }
+        }
+
+        System.out.println("Count of even numbers: " + evenCount);
+        System.out.println("Count of odd numbers: " + oddCount);
+    }
+
+    public static void main(String[] args) {
+        int[] array = {10, 15, 20, 25, 30, 35};
+
+        countEvenAndOdd(array);
+    }
+}
+
+
+
+Question 6:
+import java.util.Scanner;
+
+public class LinearSearch {
+    public static int searchElement(int[] array, int target) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == target) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int[] array = {10, 20, 30, 40, 50};
+
+        System.out.print("Enter the element to search: ");
+        int target = scanner.nextInt();
+
+        int result = searchElement(array, target);
+
+        if (result != -1) {
+            System.out.println("Element found at index: " + result);
+        } else {
+            System.out.println("Element not found in the array.");
+        }
+
+        scanner.close();
+    }
+}
+
+
+
+Question 7:
+public class SecondLargest {
+    public static int findSecondLargest(int[] array) {
+        if (array.length < 2) {
+            throw new IllegalArgumentException("Array must have at least two elements.");
+        }
+
+        int largest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
+
+        for (int element : array) {
+            if (element > largest) {
+                secondLargest = largest;
+                largest = element;
+            } else if (element > secondLargest && element != largest) {
+                secondLargest = element;
+            }
+        }
+
+        if (secondLargest == Integer.MIN_VALUE) {
+            throw new IllegalArgumentException("Array does not have a distinct second largest element.");
+        }
+
+        return secondLargest;
+    }
+
+    public static void main(String[] args) {
+        int[] array = {10, 20, 30, 40, 50};
+
+        try {
+            int secondLargest = findSecondLargest(array);
+            System.out.println("The second largest element in the array is: " + secondLargest);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
+
+
+
+Question 8:
+public class Print2DArray {
+    public static void print2DArray(int[][] array) {
+        System.out.println("2D Array:");
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.print(array[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        int[][] array = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        print2DArray(array);
+    }
+}
